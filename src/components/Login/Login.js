@@ -96,6 +96,10 @@ export const Login = () => {
   outline: none;
   color: #fff;
   font-weight: 600 ; 
+  cursor: pointer;
+  &:hover{
+    background-color: #5e9012;
+  }
  `
   const Par = styled.p`
   font-size: .8rem;
