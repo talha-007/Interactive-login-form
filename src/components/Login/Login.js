@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import React from 'react';
 import styled  from 'styled-components';
 import bg from '../images/bg.jpg';
@@ -41,11 +41,13 @@ export const Login = () => {
     flex-direction: column;
     gap: .35rem;
     margin-bottom: 1rem;
+    label{
+      font-size: .7rem;
+      color:#bbb;
+    }
     `
-    const Label = styled.label`
-    font-size: .75rem;
-    color: #bbb;
-    `
+
+
   const Input = styled.input`
   width: 19rem;
   height: 2.2rem;
@@ -106,19 +108,19 @@ export const Login = () => {
   color: #5E9044;
   `
 
-  const [values, setValues] = useState({
-    email:"",
-    password: "",
-})
+//   const [values, setValues] = useState({
+//     email:"",
+//     password: "",
+// })
 
 
   const handleOnSubmit = (e)=>{
     e.preventDefault();
   }
 
-  const handleOnChange = (event)=>{
-    setValues({ ...values, event.target.value});
-  };
+  // const handleOnChange = (event)=>{
+  //   setValues({ ...values, event.target.value});
+  // };
 
   return (
     <Maine>
@@ -131,13 +133,13 @@ export const Login = () => {
               </div>
               <form onSubmit={handleOnSubmit}>
                 <Dave3>
-                  <Label>Email Address</Label>
-                  <Input onChange={handleOnChange} value={values} type="email" pattern='/^[a-zA-Z0-9]+@[a-zA-Z]+\.[A-Za-z]+$/'/>
+                  <label>Email Address</label>
+                  <Input  type="email" pattern='/^[a-zA-Z0-9]+@[a-zA-Z]+\.[A-Za-z]+$/'/>
                   <Warn>Please enter a valid email</Warn>
                 </Dave3>
                 <Dave3>
-                  <Label>Password</Label>
-                  <Input onChange={handleOnChange}  value={values} type="text" pattern='^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$' />
+                  <label>Password</label>
+                  <Input type="text" pattern='^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$' />
                   <Inf>Password should be One letter, one number, one special character and 8 digit long</Inf>
                 </Dave3>
                 <Dave4>
