@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import React from 'react';
 import styled  from 'styled-components';
 import bg from '../images/bg.jpg';
@@ -112,15 +112,13 @@ export const Login = () => {
   color: #5E9044;
   `
 
-//   const [values, setValues] = useState({
-//     email:"",
-//     password: "",
-// })
+  const [values, setValues] = useState({
+    email: "",
+    password: ""
+});
 
-
-  const handleOnSubmit = (e)=>{
-    e.preventDefault();
-  }
+ 
+  
 
   // const handleOnChange = (event)=>{
   //   setValues({ ...values, event.target.value});
@@ -135,10 +133,10 @@ export const Login = () => {
                 <h2>Welcome Back</h2>
                 <Para>Sign in with your email address and password</Para>
               </div>
-              <form onSubmit={handleOnSubmit}>
+              <form >
                 <Dave3>
                   <label>Email Address</label>
-                  <Input  type="email" pattern='/^[a-zA-Z0-9]+@[a-zA-Z]+\.[A-Za-z]+$/'/>
+                  <Input onChange={(e)=>{setValues(e.target.value)}} value={values.email} type="email" />
                   <Warn>Please enter a valid email</Warn>
                 </Dave3>
                 <Dave3>
